@@ -1,0 +1,33 @@
+name: 更新连续日期
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # UTC
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 配置 Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: 配置提交信息
+        run: |
+          git config user.name "${{ secrets.GIT_USER_NAME }}"
+          git config user.email "${{ secrets.GIT_USER_EMAIL }}"
+
+      - name: 更新日期
+        run: |
+          python main.py
+
+      - name: 提交结果
+        run: |
+          git add .
+          git commit -m "更新 README 中的连续日期"
+          git push
