@@ -2,7 +2,7 @@ name: 更新连续日期
 
 on:
   schedule:
-    - cron: '0 0 30 * *' # UTC
+    - cron: '0 0 * * *' # UTC
   workflow_dispatch:
 
 jobs:
