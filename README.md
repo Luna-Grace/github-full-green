@@ -7,7 +7,7 @@
 
 ## 效果示例
 [贡献图](https://github.com/Luna-Grace)  
-保持全绿的第 **8** 天
+保持全绿的第 **9** 天
 
 ## LICENSE
 This repo is under the **MIT** license.
