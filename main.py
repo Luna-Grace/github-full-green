@@ -15,7 +15,7 @@ def load_config(config_path):
 
 def save_config(config_path, config):
     with open(config_path, 'w') as file:
-        json.dump(config, file)
+        json.dump(config, file, indent=2, ensure_ascii=False)
 
 def update_readme_days(readme_path, config_path):
     # 获取脚本所在目录
